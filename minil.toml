@@ -1,0 +1,3 @@
+name="Metoro"
+[build]
+build_class = "builder::MyBuilder"
