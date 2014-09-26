@@ -31,4 +31,16 @@ sub datapoints{
  return $json;
 }
 
+use File::Slurp;
+
+sub station{
+ my $self = shift;
+ my $file = 'metro_stationDict.json';
+ my $json_file = File::Slurp::read_file($file);
+ my $json = JSON::decode_json($json_file);
+ return $json;
+}
+
+
 1;
+
