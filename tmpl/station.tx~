@@ -1,0 +1,23 @@
+: cascade "include/layout.tx"
+
+: override content -> {
+
+   <:$title:></br></br>
+
+<table>
+ <tr>
+   <td>出発</td>
+   <td>到着</td>
+   <td>所要時間（分）</td>
+ </tr>
+   : for $travelTime -> $travel{
+    <tr>
+     <td><:$travel.from:><br/></td>
+     <td><:$travel.to:><br/></td>
+     <td><:$travel.time:>分<br/></td>
+    </tr>
+   :}
+
+</table>
+
+: }
