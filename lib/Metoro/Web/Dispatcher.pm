@@ -17,10 +17,9 @@ my $metro = Metoro::Model::Metro->new(api_key => 'e4346dc05e12b8e457bdfe693a858f
 any '/' => sub {
     my ($c) = @_;
     my @datapoints =  @{$metro->datapoints};
-    my @titles = map{$_->{'dc:title'}}@datapoints;
-    return $c->render('index.tx', {
-       'titles' => \@titles,
-    });
+    #my @titles = map{$_->{'dc:title'}}@datapoints;
+    #my $json = $metro->datapoints;
+    return $c->render_json(\@datapoints);
 };
 
 get '/metro/:name' => sub{

@@ -25,6 +25,7 @@ sub datapoints{
  $url =~ s/%3A/:/g;
  my $ua = LWP::UserAgent->new;
  my $res = $ua->get($url);
+ #my $json = $res->decodec_content;
  my $json = JSON::decode_json($res->decoded_content);
  return $json;
 }

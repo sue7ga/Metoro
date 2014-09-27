@@ -22,6 +22,15 @@ function to(){
  $("#to").text(res);
 }
 
+$.ajax({
+  type: 'GET',
+  url: 'http://localhost:5000/hoge/station', 
+ dataType: 'json', 
+ success: function(msg){
+   alert("data" + msg);
+ }
+});
+
 </script>
 </head>
 <body>
